@@ -3,6 +3,7 @@ package com.jg.interfaces.repositorio.lista;
 import com.jg.interfaces.modelo.Producto;
 import com.jg.interfaces.repositorio.AbstractListRepositorio;
 import com.jg.interfaces.repositorio.Direccion;
+import com.jg.interfaces.repositorio.exepciones.AccesoDatosException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,7 +11,7 @@ import java.util.List;
 public class ProductListRepositorio extends AbstractListRepositorio<Producto> {
 
     @Override
-    public void editar(Producto producto) {
+    public void editar(Producto producto) throws AccesoDatosException {
         Producto p = porId(producto.getId());
         p.setDescripcion(producto.getDescripcion());
         p.setPrecio(producto.getPrecio());

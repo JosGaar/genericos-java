@@ -3,6 +3,7 @@ package com.jg.interfaces.repositorio.lista;
 import com.jg.interfaces.modelo.Cliente;
 import com.jg.interfaces.repositorio.AbstractListRepositorio;
 import com.jg.interfaces.repositorio.Direccion;
+import com.jg.interfaces.repositorio.exepciones.AccesoDatosException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,7 +11,7 @@ import java.util.List;
 public class ClientListRepositorio extends AbstractListRepositorio<Cliente> {
 
     @Override
-    public void editar(Cliente cliente) {
+    public void editar(Cliente cliente) throws AccesoDatosException {
         Cliente c = this.porId(cliente.getId());
         c.setNombre(cliente.getNombre());
         c.setApellido(cliente.getApellido());
